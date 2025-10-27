@@ -180,18 +180,10 @@
 
 // Contact Section Office Toggle Functionality
 document.addEventListener('DOMContentLoaded', function() {
-    let isLAOffice = true; // Track current office state
+    let isOCOffice = true; // Track current office state
 
     // Office data
     const officeData = {
-        LA: {
-            buttonText: 'Switch to Orange County Office',
-            locationTitle: 'LA Office Location',
-            locationAddress: '3600 Wilshire Blvd, Suite #900 Los Angeles, CA 90010',
-            phoneTitle: 'Call Our LA Office',
-            phoneNumber: '213.355.3600',
-            mapSrc: 'https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3305.3437447267456!2d-118.30622142428315!3d34.06070147315385!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x80c2b8830a87fd1b%3A0x737501cc8343555c!2s3600%20Wilshire%20Blvd%20%23900%2C%20Los%20Angeles%2C%20CA%2090010!5e0!3m2!1sen!2sus!4v1758232627793!5m2!1sen!2sus'
-        },
         OC: {
             buttonText: 'Switch to Los Angeles Office',
             locationTitle: 'OC Office Location',
@@ -199,6 +191,14 @@ document.addEventListener('DOMContentLoaded', function() {
             phoneTitle: 'Call Our OC Office',
             phoneNumber: '949.323.2161',
             mapSrc: 'https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3317.0845847827647!2d-118.00066162428857!3d33.87060267320847!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x80dd2a35b5b5b5b5%3A0x1234567890abcdef!2s6281%20Beach%20Blvd%20%23245%2C%20Buena%20Park%2C%20CA%2090621!5e0!3m2!1sen!2sus!4v1758232627794!5m2!1sen!2sus'
+        },
+        LA: {
+            buttonText: 'Switch to Orange County Office',
+            locationTitle: 'LA Office Location',
+            locationAddress: '3600 Wilshire Blvd, Suite #900 Los Angeles, CA 90010',
+            phoneTitle: 'Call Our LA Office',
+            phoneNumber: '213.355.3600',
+            mapSrc: 'https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3305.3437447267456!2d-118.30622142428315!3d34.06070147315385!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x80c2b8830a87fd1b%3A0x737501cc8343555c!2s3600%20Wilshire%20Blvd%20%23900%2C%20Los%20Angeles%2C%20CA%2090010!5e0!3m2!1sen!2sus!4v1758232627793!5m2!1sen!2sus'
         }
     };
 
@@ -217,14 +217,14 @@ document.addEventListener('DOMContentLoaded', function() {
         }
         
         setTimeout(() => {
-            if (isLAOffice) {
+            if (isOCOffice) {
                 // Switch to OC Office
-                updateOfficeContent(officeData.OC);
-                isLAOffice = false;
+                updateOfficeContent(officeData.LA);
+                isOCOffice = false;
             } else {
                 // Switch to LA Office
-                updateOfficeContent(officeData.LA);
-                isLAOffice = true;
+                updateOfficeContent(officeData.OC);
+                isOCOffice = true;
             }
             
             // Remove fade effect

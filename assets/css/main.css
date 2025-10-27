@@ -1,5 +1,5 @@
-
-
+/* Imports */
+@import url("https://fonts.googleapis.com/css2?family=Baloo+2&display=swap");
 
 /* Fonts */
 :root {
@@ -13,7 +13,7 @@
   --background-color: #ffffff; /* Background color for the entire website, including individual sections */
   --default-color: #444444; /* Default color used for the majority of the text content across the entire website */
   --heading-color: #2c4964; /* Color for headings, subheadings and title throughout the website */
-  --accent-color: #1977cc; /* Accent color that represents your brand on the website. It's used for buttons, links, and other elements that need to stand out */
+  --accent-color: #0A3161; /* Accent color that represents your brand on the website. It's used for buttons, links, and other elements that need to stand out */
   --surface-color: #ffffff; /* The surface color is used as a background of boxed elements within sections, such as cards, icon boxes, or other elements that require a visual separation from the global background. */
   --contrast-color: #ffffff; /* Contrast color for text, ensuring readability against backgrounds of accent, heading, or default colors. */
   --alt-color: #f1f5fb; /* Alt color for background, breaking up monotony */
@@ -22,11 +22,11 @@
 /* Nav Menu Colors - The following color variables are used specifically for the navigation menu. They are separate from the global colors to allow for more customization options */
 :root {
   --nav-color: #2c4964;  /* The default color of the main navmenu links */
-  --nav-hover-color: #1977cc; /* Applied to main navmenu links when they are hovered over or active */
+  --nav-hover-color: #0A3161; /* Applied to main navmenu links when they are hovered over or active */
   --nav-mobile-background-color: #ffffff; /* Used as the background color for mobile navigation menu */
   --nav-dropdown-background-color: #ffffff; /* Used as the background color for dropdown items that appear when hovering over primary navigation items */
   --nav-dropdown-color: #2c4964; /* Used for navigation links of the dropdown items in the navigation menu. */
-  --nav-dropdown-hover-color: #1977cc; /* Similar to --nav-hover-color, this color is applied to dropdown navigation links when they are hovered over. */
+  --nav-dropdown-hover-color: #0A3161; /* Similar to --nav-hover-color, this color is applied to dropdown navigation links when they are hovered over. */
 }
 
 /* Color Presets - These classes override global colors when applied to any section or element, providing reuse of the sam color scheme. */
@@ -932,12 +932,16 @@ section,
 }
 
 .hero .welcome h2 {
+  color: var(--alt-color);
+  text-shadow: 2px 0 0 #000, 0 -2px 0 #000, 0 2px 0 #000, -2px 0 0 #000;
   margin: 0;
   font-size: 48px;
   font-weight: 700;
 }
 
 .hero .welcome p {
+    color: var(--alt-color);
+  text-shadow: 2px 0 0 #000, 0 -2px 0 #000, 0 2px 0 #000, -2px 0 0 #000;
   font-size: 24px;
   margin: 0;
 }
@@ -946,65 +950,89 @@ section,
   margin-top: 40px;
 }
 
-.hero .content .why-box {
+/*--------------------------------------------------------------
+# Operation Section
+--------------------------------------------------------------*/
+
+.operation .content {
+  max-width: 100%; /* Adjust this value as needed */
+  margin: 0 auto;
+  padding: 0 20px;
+}
+
+.operation .content .row {
+  justify-content: center;
+}
+
+.operation .content .why-box {
   color: var(--contrast-color);
   background: var(--accent-color);
   padding: 30px;
   border-radius: 4px;
+  flex: 1;
+  min-width: 300px; /* Adjust as needed */
 }
-
-.hero .content .why-box h3 {
+.operation .content .why-box h3 {
   color: var(--contrast-color);
   font-weight: 700;
   font-size: 34px;
   margin-bottom: 30px;
 }
 
-.hero .content .why-box p {
+.operation .content .why-box p {
   margin-bottom: 30px;
 }
 
-.hero .content .why-box .more-btn {
+.operation .content .why-box .more-btn {
   color: var(--contrast-color);
   background: color-mix(in srgb, var(--contrast-color), transparent 80%);
   display: inline-block;
-  padding: 6px 30px 8px 30px;
+  padding: 8px 30px 8px 30px;
   border-radius: 50px;
   transition: all ease-in-out 0.4s;
 }
 
-.hero .content .why-box .more-btn i {
+.operation .content .why-box .more-btn i {
   font-size: 14px;
 }
 
-.hero .content .why-box .more-btn:hover {
+.operation .content .why-box .more-btn:hover {
   background: var(--surface-color);
   color: var(--accent-color);
 }
 
-.hero .content .icon-box {
+
+.operation .content .icon-box {
   text-align: center;
   border-radius: 10px;
   background: color-mix(in srgb, var(--surface-color), transparent 20%);
   box-shadow: 0px 2px 15px rgba(0, 0, 0, 0.1);
   padding: 40px 30px;
-  width: 100%;
+  flex: 1;
+  min-width: 300px; /* Adjust as needed */
 }
 
-.hero .content .icon-box i {
+.operation .content .icon-box i {
   font-size: 40px;
   color: var(--accent-color);
 }
 
-.hero .content .icon-box h4 {
+.operation .content .icon-box h4 {
   font-size: 20px;
   font-weight: 700;
   margin: 10px 0 20px 0;
 }
 
-.hero .content .icon-box p {
+.operation .content .icon-box p {
   font-size: 15px;
   color: color-mix(in srgb, var(--default-color), transparent 30%);
+}
+
+.operation .content .icon-box ul {
+  padding: 0;
+  margin: 10px 0 20px 0;
+  list-style: none;
+  text-align: center;
 }
 
 /*--------------------------------------------------------------
@@ -1148,128 +1176,13 @@ section,
   color: var(--contrast-color);
 }
 
-/*--------------------------------------------------------------
-# Appointment Section
---------------------------------------------------------------*/
-.appointment .php-email-form {
-  width: 100%;
-}
 
-.appointment .php-email-form .form-group {
-  padding-bottom: 8px;
-}
-
-.appointment .php-email-form input,
-.appointment .php-email-form textarea,
-.appointment .php-email-form select {
-  color: var(--default-color);
-  background-color: transparent;
-  border-color: color-mix(in srgb, var(--default-color), transparent 80%);
-  border-radius: 0;
-  box-shadow: none;
-  font-size: 14px;
-  padding: 10px !important;
-}
-
-.appointment .php-email-form input:focus,
-.appointment .php-email-form textarea:focus,
-.appointment .php-email-form select:focus {
-  border-color: var(--accent-color);
-}
-
-.appointment .php-email-form input::placeholder,
-.appointment .php-email-form textarea::placeholder,
-.appointment .php-email-form select::placeholder {
-  color: color-mix(in srgb, var(--default-color), transparent 70%);
-}
-
-.appointment .php-email-form input,
-.appointment .php-email-form select {
-  height: 44px;
-}
-
-.appointment .php-email-form textarea {
-  padding: 10px 12px;
-}
-
-.appointment .php-email-form button[type=submit] {
-  background: var(--accent-color);
-  border: 0;
-  padding: 10px 35px;
-  color: #fff;
-  transition: 0.4s;
-  border-radius: 50px;
-}
-
-.appointment .php-email-form button[type=submit]:hover {
-  background: color-mix(in srgb, var(--accent-color) 90%, white 15%);
-}
-
-/*--------------------------------------------------------------
-# Departments Section
---------------------------------------------------------------*/
-.departments {
-  overflow: hidden;
-}
-
-.departments .nav-tabs {
-  border: 0;
-}
-
-.departments .nav-link {
-  border: 0;
-  padding: 12px 15px 12px 0;
-  transition: 0.3s;
-  color: var(--default-color);
-  border-radius: 0;
-  border-right: 2px solid color-mix(in srgb, var(--default-color), transparent 90%);
-  font-weight: 600;
-  font-size: 15px;
-}
-
-.departments .nav-link:hover {
-  color: var(--accent-color);
-}
-
-.departments .nav-link.active {
-  color: var(--accent-color);
-  border-color: var(--accent-color);
-  background-color: var(--background-color);
-}
-
-.departments .tab-pane.active {
-  animation: fadeIn 0.5s ease-out;
-}
-
-.departments .details h3 {
-  font-size: 26px;
-  font-weight: 600;
-  margin-bottom: 20px;
-}
-
-.departments .details p {
-  color: color-mix(in srgb, var(--default-color), transparent 20%);
-}
-
-.departments .details p:last-child {
-  margin-bottom: 0;
-}
-
-@media (max-width: 992px) {
-  .departments .nav-link {
-    border: 0;
-    padding: 15px;
-  }
-
-  .departments .nav-link.active {
-    color: var(--accent-color);
-    background: var(--accent-color);
-  }
-}
 
 /*--------------------------------------------------------------
 # Team Section
 --------------------------------------------------------------*/
+
+
 .team .team-member {
   background-color: var(--surface-color);
   box-shadow: 0px 2px 15px rgba(0, 0, 0, 0.1);
@@ -1350,52 +1263,16 @@ section,
   font-size: 14px;
 }
 
-.team .team-member .social {
-  margin-top: 12px;
-  display: flex;
-  align-items: center;
-  justify-content: start;
-  width: 100%;
-}
 
-@media (max-width: 468px) {
-  .team .team-member .social {
-    justify-content: center;
-  }
-}
-
-.team .team-member .social a {
-  background: color-mix(in srgb, var(--default-color), transparent 94%);
-  transition: ease-in-out 0.3s;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  border-radius: 50px;
-  width: 36px;
-  height: 36px;
-}
-
-.team .team-member .social a i {
-  color: color-mix(in srgb, var(--default-color), transparent 20%);
-  font-size: 16px;
-  margin: 0 2px;
-}
-
-.team .team-member .social a:hover {
-  background: var(--accent-color);
-}
-
-.team .team-member .social a:hover i {
-  color: var(--contrast-color);
-}
-
-.team .team-member .social a+a {
-  margin-left: 8px;
-}
 
 /*--------------------------------------------------------------
 # Faq Section
 --------------------------------------------------------------*/
+
+.faq .section {
+  background-image: url(/assets/img/faq-bg.jpg);
+}
+
 .faq .faq-container .faq-item {
   background-color: var(--surface-color);
   position: relative;
@@ -1483,9 +1360,23 @@ section,
 /*--------------------------------------------------------------
 # Core Values Section
 --------------------------------------------------------------*/
+
+.coreValues {
+  background-image: url(/assets/img/core-values-bg-img.jpg);
+}
+
+.coreValues .container {
+  background-color: var(--background-color);
+  opacity: 90%;
+}
 .coreValues .info h3 {
   font-weight: 700;
   font-size: 32px;
+  padding-left: 20px;
+}
+
+.coreValues .info p {
+  padding-left: 20px;
 }
 
 .coreValues .swiper {
@@ -1743,3 +1634,276 @@ section,
     opacity: 0.3;
 }
 
+
+
+/* Service Cards */
+
+
+
+.light {
+  background: #f3f5f7;
+}
+
+a,
+a:hover {
+  text-decoration: none;
+  transition: color 0.3s ease-in-out;
+}
+
+#pageHeaderTitle {
+  margin: 2rem 0;
+  text-transform: uppercase;
+  text-align: center;
+  font-size: 2.5rem;
+}
+
+/* Cards */
+.postcard {
+  flex-wrap: wrap;
+  display: flex;
+  box-shadow: 0 4px 21px -12px rgba(0, 0, 0, 0.66);
+  margin: 0 0 2rem 0;
+  overflow: hidden;
+  position: relative;
+  color: #ffffff;
+}
+
+.postcard.dark {
+  background-color: #18151f;
+}
+
+.postcard.light {
+  background-color: #e1e5ea;
+}
+
+.postcard .t-dark {
+  color: #18151f;
+}
+
+.postcard a {
+  color: inherit;
+}
+
+.postcard h1,
+.postcard .h1 {
+  margin-bottom: 0.5rem;
+  font-weight: 500;
+  line-height: 1.2;
+}
+
+.postcard .small {
+  font-size: 80%;
+}
+
+.postcard .postcard__title {
+  font-size: 1.75rem;
+}
+
+.postcard .postcard__img {
+  max-height: 180px;
+  width: 100%;
+  object-fit: cover;
+  position: relative;
+}
+
+.postcard .postcard__img_link {
+  display: contents;
+}
+
+.postcard .postcard__bar {
+  width: 50px;
+  height: 10px;
+  margin: 10px 0;
+  border-radius: 5px;
+  background-color: #424242;
+  transition: width 0.2s ease;
+}
+
+.postcard .postcard__text {
+  padding: 1.5rem;
+  position: relative;
+  display: flex;
+  flex-direction: column;
+}
+
+.postcard .postcard__preview-txt {
+  overflow: hidden;
+  text-overflow: ellipsis;
+  text-align: justify;
+  height: 100%;
+}
+
+.postcard .postcard__tagbox {
+  display: flex;
+  flex-flow: row wrap;
+  font-size: 14px;
+  margin: 20px 0 0 0;
+  padding: 0;
+  justify-content: center;
+}
+
+.postcard .postcard__tagbox .tag__item {
+  display: inline-block;
+  background: rgba(83, 83, 83, 0.4);
+  border-radius: 3px;
+  padding: 2.5px 10px;
+  margin: 0 5px 5px 0;
+  cursor: default;
+  user-select: none;
+  transition: background-color 0.3s;
+}
+
+.postcard .postcard__tagbox .tag__item:hover {
+  background: rgba(83, 83, 83, 0.8);
+}
+
+.postcard:before {
+  content: "";
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  background-image: linear-gradient(-70deg, #424242, transparent 50%);
+  opacity: 1;
+}
+
+.postcard:hover .postcard__bar {
+  width: 100px;
+}
+
+@media screen and (min-width: 769px) {
+  .postcard {
+    flex-wrap: inherit;
+  }
+
+  .postcard .postcard__title {
+    font-size: 2rem;
+  }
+
+  .postcard .postcard__tagbox {
+    justify-content: start;
+  }
+
+  .postcard .postcard__img {
+    max-width: 300px;
+    max-height: 100%;
+    transition: transform 0.3s ease;
+  }
+
+  .postcard .postcard__text {
+    padding: 3rem;
+    width: 100%;
+  }
+
+  .postcard .media.postcard__text:before {
+    content: "";
+    position: absolute;
+    display: block;
+    background: #18151f;
+    top: -20%;
+    height: 130%;
+    width: 55px;
+  }
+
+  .postcard:hover .postcard__img {
+    transform: scale(1.1);
+  }
+
+  .postcard:nth-child(2n+1) {
+    flex-direction: row;
+  }
+
+  .postcard:nth-child(2n+0) {
+    flex-direction: row-reverse;
+  }
+
+  .postcard:nth-child(2n+1) .postcard__text::before {
+    left: -12px !important;
+  }
+
+  .postcard:nth-child(2n+0) .postcard__text::before {
+    right: -12px !important;
+  }
+}
+
+@media screen and (min-width: 1024px) {
+  .postcard__text {
+    padding: 2rem 3.5rem;
+  }
+
+  .postcard__text:before {
+    content: "";
+    position: absolute;
+    display: block;
+    top: -20%;
+    height: 130%;
+    width: 55px;
+  }
+
+  .postcard.dark .postcard__text:before {
+    background: #18151f;
+  }
+
+  .postcard.light .postcard__text:before {
+    background: #e1e5ea;
+  }
+}
+
+/* SERVICES COLORS */
+
+.postcard .postcard__tagbox .blue.play:hover {
+  background: var(--accent-color);
+}
+
+.blue .postcard__title:hover {
+  color: var(--accent-color);
+}
+
+.blue .postcard__bar {
+  background-color: var(--accent-color);
+}
+
+.blue::before {
+  background-image: linear-gradient(-30deg, rgba(0, 118, 189, 0.1), transparent 50%);
+}
+
+.blue:nth-child(2n)::before {
+  background-image: linear-gradient(30deg, rgba(0, 118, 189, 0.1), transparent 50%);
+}
+
+
+
+@media screen and (min-width: 769px) {
+  .green::before {
+    background-image: linear-gradient(-80deg, rgba(121, 221, 9, 0.1), transparent 50%);
+  }
+
+  .green:nth-child(2n)::before {
+    background-image: linear-gradient(80deg, rgba(121, 221, 9, 0.1), transparent 50%);
+  }
+
+  .blue::before {
+    background-image: linear-gradient(-80deg, rgba(0, 118, 189, 0.1), transparent 50%);
+  }
+
+  .blue:nth-child(2n)::before {
+    background-image: linear-gradient(80deg, rgba(0, 118, 189, 0.1), transparent 50%);
+  }
+
+  .red::before {
+    background-image: linear-gradient(-80deg, rgba(189, 21, 11, 0.1), transparent 50%);
+  }
+
+  .red:nth-child(2n)::before {
+    background-image: linear-gradient(80deg, rgba(189, 21, 11, 0.1), transparent 50%);
+  }
+
+  .yellow::before {
+    background-image: linear-gradient(-80deg, rgba(189, 187, 73, 0.1), transparent 50%);
+  }
+
+  .yellow:nth-child(2n)::before {
+    background-image: linear-gradient(80deg, rgba(189, 187, 73, 0.1), transparent 50%);
+  }
+}
